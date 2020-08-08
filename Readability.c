@@ -24,10 +24,9 @@ int main(void)
   for (int i =0; i< n; i++)
   {
       if(para[i] == ' ')
-{
+    {
     words++;
-}
-
+    }
 }
 
 // For Sentences
@@ -39,7 +38,7 @@ for (int i = 0; i< n; i ++)
         sentences++;
     }
 }
- printf(" No of letters = %i\n",letters);
+  printf(" No of letters = %i\n",letters);
   printf(" No of Words = %i\n",words+1);
 
   printf(" No of Sentences = %i\n",sentences);
@@ -48,8 +47,11 @@ for (int i = 0; i< n; i ++)
     S = (100 *(float) sentences)/words;
 
     float index = 0.0588 * L - 0.296 * S - 15.8;
-
-    printf("Grade %f \n", round(index) );
+    index = round(index);
+    printf("Grade %i \n", (int)index );
+    
     if (index > 16) printf ("Grade 16+ \n");
+    
     else if (index < 1) printf ("Before Grade 1 \n");
+    return 0;
 }
